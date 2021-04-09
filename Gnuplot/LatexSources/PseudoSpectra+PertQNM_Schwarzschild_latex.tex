@@ -1,0 +1,53 @@
+%Command for fig generate by gnuplot with terminal epslatex color
+% pdflatex Latexfig.tex; 
+% pdfcrop Latexfig.pdf; 
+% mv Latexfig-crop.pdf HorizonHO1.pdf; 
+% convert HorizonHO1.pdf HorizonHO1.eps (optional, lost of quality)
+
+\documentclass{article}
+\usepackage{epsfig}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{graphicx}
+\usepackage{epsfig}
+\usepackage{color}
+\usepackage{url}
+\usepackage{times}
+\usepackage{bm}
+\usepackage{mathrsfs}
+\usepackage[utf8]{inputenc}
+\usepackage{hyperref}
+
+
+
+%\usepackage{pstricks}
+\setlength{\textwidth}{100cm}
+\setlength{\textheight}{100cm}
+
+% Scri
+\font\svtnscr=rsfs10 scaled1700 %3740 %3400 %1700
+\font\tenscr=rsfs10 scaled1100 %2420 %2200 %scaled1100
+\font\sevenscr=rsfs7 % scaled \magstep1
+\font\fivescr=rsfs5 % scaled \magstep1
+\skewchar\tenscr='177
+\skewchar\sevenscr='177
+\skewchar\fivescr='177
+\newfam\scrfam
+\textfont\scrfam=\tenscr
+\scriptfont\scrfam=\sevenscr
+\scriptscriptfont\scrfam=\fivescr
+\def\scr{\fam\scrfam}
+
+\newcommand{\SCRI}{{\svtnscr I}}
+\newcommand{\Scri}{{\tenscr I}}
+\def\scri{{\fam\scrfam I}}
+\def\scre{{\fam\scrfam E}}
+\def\scrm{{\fam\scrfam M}}
+\def\scru{{\fam\scrfam U}}
+\def\scrc{{\fam\scrfam C}}
+
+
+\begin{document}
+\pagestyle{empty}
+\input{PseudoSpectra+PertQNM_Schwarzschild.tex}
+\end{document}
