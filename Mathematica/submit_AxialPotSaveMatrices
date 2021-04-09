@@ -1,0 +1,11 @@
+#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 1
+#$ -l h_rt=240:00:0
+#$ -l h_vmem=16.G
+#$ -m bea
+
+module load mathematica
+math -script QNM_Schwarzschild_AxialPot_SaveMatrices_17March21.m
+echo "done saving matrices"

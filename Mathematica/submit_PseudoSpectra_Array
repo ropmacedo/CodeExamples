@@ -1,0 +1,15 @@
+#!/bin/bash
+#$ -cwd
+#$ -j y
+#$ -pe smp 1
+#$ -l h_rt=02:00:0
+#$ -l h_vmem=16.G
+#$ -t 1-1681
+#$ -tc 50
+
+INPUT_FILE=$(sed -n "${SGE_TASK_ID}p" list_of_files.txt)
+echo ${SGE_TASK_ID}
+echo ${INPUT_FILE}
+
+module load mathematica
+math -script PseudoSpectra_Schwarzschild_PolarPert_LoadMatrices_17March21.m ${INPUT_FILE}
